@@ -1,0 +1,12 @@
+" alexnj .vimperatorrc
+
+set focuscontent
+set visualbell
+
+set hintchars=asdfghklqwertyuiop
+colorscheme productive
+
+" Remap tab-close to x, instead of d.
+nmap d <Nop>
+nnoremap x d
+

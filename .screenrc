@@ -9,7 +9,7 @@ altscreen on
 shell bash
 nonblock on
 sorendition "-b dw"
-hardstatus alwayslastline "%{= ky}%-Lw%{=r}%20>%n %t%{= ky}%+Lw %{= ky}%-=| %{= kw}%M%d %0C:%s%a (Load: %l) ${USER}@%H "
+hardstatus alwayslastline "%{= ky}%-Lw%{=r}%20>%n %t%{= ky}%+Lw %{= ky}%-=| %{= kw} %0C:%s%a (%l) ${USER}@%H "
 
 # %{= ky}     set color to yellow on black.
 # %{= yk}     set color to black on yellow.
