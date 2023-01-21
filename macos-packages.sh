@@ -15,8 +15,12 @@ declare BREWS=(
   # Programming fonts
   "font-inconsolata"
   "font-fira-code"
+  "font-cascadia-code"
+
+  # Other packages
   "tmux"
   "nvm"
+  "iterm2"
 )
 
 for keg in "${BREWS[@]}" 
@@ -29,7 +33,7 @@ do
   fi
 done
 
-if ! exists ~/.nvm; then
+if [ -f ~/.nvm ]; then
   mkdir ~/.nvm
   export NVM_DIR="$HOME/.nvm"
   [ -s "/opt/homebrew/opt/nvm/nvm.sh" ] && \. "/opt/homebrew/opt/nvm/nvm.sh"  # This loads nvm

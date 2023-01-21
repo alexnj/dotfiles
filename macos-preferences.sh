@@ -122,6 +122,10 @@ defaults write com.apple.dock "tilesize" -int "36"
 defaults write com.apple.dock "autohide-time-modifier" -float "0"
 defaults write com.apple.dock "autohide-delay" -float "0"
 
+#
+# Activate all setting changes
+#
+
 # Activate the above settings without a logout
 /System/Library/PrivateFrameworks/SystemAdministration.framework/Resources/activateSettings -u
 
@@ -130,3 +134,30 @@ killall Dock
 
 # Restart Finder
 killall Finder
+
+
+## App specific: iTerm
+
+# Most of iTerm's settings can be configured via `defaults write com.googlecode.iterm2`,
+# however, it's way more efficient to have the configuration be pointed to dotfiles, 
+# including the color palettes. 
+defaults write com.googlecode.iterm2 LoadPrefsFromCustomFolder -int 1
+defaults write com.googlecode.iterm2 PrefsCustomFolder -string "$(pwd)/iterm"
+
+# Save and sync settings back to dotfiles automatically
+defaults write com.googlecode.iterm2 NoSyncNeverRemindPrefsChangesLostForFile_selection -int 2
+
+# Dont ask back when I ask you to quit
+defaults write com.googlecode.iterm2 PromptOnQuit -int 0
+
+# Minimal/no title bar
+defaults write com.googlecode.iterm2 TabStyleWithAutomaticOption -int 5
+
+# Preserve whitespace in selections copied to the pasteboard
+defaults write com.googlecode.iterm2 TrimWhitespaceOnCopy -bool false
+
+## git 
+
+# Set global .gitignore
+git config --global core.excludesfile ~/.gitignore
+
