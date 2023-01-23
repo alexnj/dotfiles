@@ -25,6 +25,9 @@ declare BREWS=(
 
   # powerline10k 
   "romkatv/powerlevel10k/powerlevel10k"
+
+  # fuzzy search (^r)
+  "fzf"
 )
 
 for keg in "${BREWS[@]}" 
