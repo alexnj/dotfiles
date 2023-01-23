@@ -122,6 +122,9 @@ defaults write com.apple.dock "tilesize" -int "36"
 defaults write com.apple.dock "autohide-time-modifier" -float "0"
 defaults write com.apple.dock "autohide-delay" -float "0"
 
+# Faster pointer tracking
+defaults write -g com.apple.mouse.scaling 4.0
+
 #
 # Activate all setting changes
 #
@@ -161,3 +164,8 @@ defaults write com.googlecode.iterm2 TrimWhitespaceOnCopy -bool false
 # Set global .gitignore
 git config --global core.excludesfile ~/.gitignore
 
+# cache credentials in mac os keychain
+git config --global credential.helper osxkeychain
+
+# Dont commit without setting local git.user and git.email
+git config --global user.useConfigOnly true

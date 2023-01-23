@@ -4,3 +4,5 @@ sudo -v
 sh install-dotfiles.sh
 sh macos-packages.sh
 sh macos-preferences.sh
+
+sh personal.sh
