@@ -16,11 +16,15 @@ declare BREWS=(
   "font-inconsolata"
   "font-fira-code"
   "font-cascadia-code"
+  "font-meslo-lg-nerd-font"
 
   # Other packages
   "tmux"
   "nvm"
   "iterm2"
+
+  # powerline10k 
+  "romkatv/powerlevel10k/powerlevel10k"
 )
 
 for keg in "${BREWS[@]}" 
