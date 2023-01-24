@@ -2,4 +2,4 @@
 nvm install 16.16
 
 # yarn
-npm i --location=global yarn
+npm i -g yarn
