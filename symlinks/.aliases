@@ -1,6 +1,6 @@
 alias ll='ls -ltr'
 alias ls='ls -G'
-alias resource='source ${HOME}/.dotfiles/.profile'
+alias resource='source ${HOME}/.dotfiles/.zshrc'
 alias ll='ls -ltrG'
 alias cls='clear'
 alias l='ll'

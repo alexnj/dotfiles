@@ -23,3 +23,10 @@ source /opt/homebrew/opt/powerlevel10k/powerlevel10k.zsh-theme
 
 # enable fuzzy search (fzf)
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+DISABLE_AUTO_TITLE="true"
+precmd() {
+  # sets the tab title to current dir
+  echo -ne "\e]1;${PWD##*/}\a"
+}
+
