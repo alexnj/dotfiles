@@ -10,6 +10,9 @@ if ! exists brew; then
   eval "$(/opt/homebrew/bin/brew shellenv)"
 fi
 
+# Enable font cask
+brew tap homebrew/cask-fonts
+
 # Install favorite brews.
 declare BREWS=(
   # Programming fonts
