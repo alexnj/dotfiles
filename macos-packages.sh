@@ -3,7 +3,7 @@ function exists() {
 }
 
 # Install homebrew
-if ! exists brew; then 
+if ! exists brew; then
   /bin/bash -c \
     "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
   echo 'eval "$(/opt/homebrew/bin/brew shellenv)"' >> ~/.profile
@@ -23,14 +23,18 @@ declare BREWS=(
   "nvm"
   "iterm2"
 
-  # powerline10k 
+  # powerline10k
   "romkatv/powerlevel10k/powerlevel10k"
 
   # fuzzy search (^r)
   "fzf"
+
+  # json
+  "jq"
+  "jless"
 )
 
-for keg in "${BREWS[@]}" 
+for keg in "${BREWS[@]}"
 do
   printf "Brewing %s... " $keg
   if ! brew list $keg > /dev/null 2>&1; then
