@@ -25,16 +25,11 @@ declare BREWS=(
   "tmux"
   "nvm"
   "iterm2"
-
-  # powerline10k
-  "romkatv/powerlevel10k/powerlevel10k"
-
-  # fuzzy search (^r)
-  "fzf"
-
-  # json
-  "jq"
-  "jless"
+  "romkatv/powerlevel10k/powerlevel10k" # powerline10k
+  "fzf" # fuzzy search (^r)
+  "jq" # json processor
+  "jless" # json view for cmdline
+  "mas" # mac appstore with brew
 )
 
 for keg in "${BREWS[@]}"
@@ -54,3 +49,17 @@ if [ -f ~/.nvm ]; then
   [ -s "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm" ] && \. "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
 fi
 
+# Install favorite Mac Store apps
+declare MACAPPS=(
+  "937984704" # Amphetamine
+)
+
+for app in "${MACAPPS[@]}"
+do
+  printf "Installing %s from AppStore... " $keg
+  if ! mas list | grep $app > /dev/null 2>&1; then
+    mas install $app
+  else
+    printf "already installed.\n"
+  fi
+done

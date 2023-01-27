@@ -44,13 +44,13 @@ defaults write com.apple.finder "FXPreferredViewStyle" -string "clmv"
 defaults write com.apple.finder "FXEnableExtensionChangeWarning" -bool "false"
 
 # Keep folders on top when sorting by name
-defaults write com.apple.finder "_FXSortFoldersFirst" -bool "true" 
+defaults write com.apple.finder "_FXSortFoldersFirst" -bool "true"
 
 # Add a quit option to the Finder.
 defaults write com.apple.finder "QuitMenuItem" -bool "false"
 
 # Show hidden files
-defaults write com.apple.finder "AppleShowAllFiles" -bool "true" 
+defaults write com.apple.finder "AppleShowAllFiles" -bool "true"
 
 # Show path bar in the bottom of the Finder windows
 defaults write com.apple.finder "ShowPathbar" -bool "true"
@@ -80,7 +80,7 @@ defaults write com.apple.ActivityMonitor ShowCategory -int 0
 defaults write com.apple.LaunchServices LSQuarantine -bool NO
 
 # Update every second
-defaults write com.apple.ActivityMonitor "UpdatePeriod" -int "1" 
+defaults write com.apple.ActivityMonitor "UpdatePeriod" -int "1"
 
 #
 # Menu bar
@@ -96,14 +96,14 @@ defaults write ~/Library/Preferences/ByHost/com.apple.controlcenter.plist Batter
 defaults write ~/Library/Preferences/ByHost/com.apple.controlcenter.plist Sound -int 18
 
 # Time ticks
-defaults write com.apple.menuextra.clock "FlashDateSeparators" -bool "true" 
+defaults write com.apple.menuextra.clock "FlashDateSeparators" -bool "true"
 
 #
 # Dock
 #
 
 # Mute some animations
-defaults write com.apple.dock "mineffect" -string "scale" 
+defaults write com.apple.dock "mineffect" -string "scale"
 defaults write com.apple.dock launchanim -bool false
 
 # Have dock show only the open apps.
@@ -112,11 +112,11 @@ defaults write com.apple.dock static-only -bool TRUE
 # Make dock dim hidden apps
 defaults write com.apple.dock showhidden -bool TRUE
 
-# Dock to left 
-defaults write com.apple.dock "orientation" -string "left" 
+# Dock to left
+defaults write com.apple.dock "orientation" -string "left"
 
 # Smaller icons on dock
-defaults write com.apple.dock "tilesize" -int "36" 
+defaults write com.apple.dock "tilesize" -int "36"
 
 # Faster no animation dock
 defaults write com.apple.dock "autohide-time-modifier" -float "0"
@@ -142,8 +142,8 @@ killall Finder
 ## App specific: iTerm
 
 # Most of iTerm's settings can be configured via `defaults write com.googlecode.iterm2`,
-# however, it's way more efficient to have the configuration be pointed to dotfiles, 
-# including the color palettes. 
+# however, it's way more efficient to have the configuration be pointed to dotfiles,
+# including the color palettes.
 defaults write com.googlecode.iterm2 LoadPrefsFromCustomFolder -int 1
 defaults write com.googlecode.iterm2 PrefsCustomFolder -string "$(pwd)/iterm"
 
@@ -159,7 +159,7 @@ defaults write com.googlecode.iterm2 TabStyleWithAutomaticOption -int 5
 # Preserve whitespace in selections copied to the pasteboard
 defaults write com.googlecode.iterm2 TrimWhitespaceOnCopy -bool false
 
-## git 
+## git
 
 # Set global .gitignore
 git config --global core.excludesfile ~/.gitignore
@@ -169,3 +169,13 @@ git config --global credential.helper osxkeychain
 
 # Dont commit without setting local git.user and git.email
 git config --global user.useConfigOnly true
+
+
+## Amphetamine
+
+defaults write com.if.Amphetamine "Icon Style" -int 6
+defaults write com.if.Amphetamine "Default Duration" -int 21
+defaults write com.if.Amphetamine "Enable Statistics" -int 0
+defaults write com.if.Amphetamine "Show Session Time In Status Bar" -int 1
+defaults write com.if.Amphetamine "Show Welcome Window" -int 0
+defaults write com.if.Amphetamine "Reduce Motion" -int 1
