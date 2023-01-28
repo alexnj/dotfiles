@@ -31,6 +31,8 @@ declare BREWS=(
   "jless" # json view for cmdline
   "mas" # mac appstore with brew
   "gh" # github cli
+  "tldr" # explainer
+  "rectangle" # window manager
 )
 
 for keg in "${BREWS[@]}"
