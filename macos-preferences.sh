@@ -164,11 +164,17 @@ defaults write com.googlecode.iterm2 TrimWhitespaceOnCopy -bool false
 # Set global .gitignore
 git config --global core.excludesfile ~/.gitignore
 
-# cache credentials in mac os keychain
+# Cache credentials in mac os keychain
 git config --global credential.helper osxkeychain
 
 # Dont commit without setting local git.user and git.email
 git config --global user.useConfigOnly true
+
+# Sane history
+git config --global pull.ff only
+
+# Easier to read diffs when lines move
+git config --global diff.colorMoved zebra
 
 
 ## Amphetamine
