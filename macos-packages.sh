@@ -55,6 +55,7 @@ fi
 # Install favorite Mac Store apps
 declare MACAPPS=(
   "937984704" # Amphetamine
+  "425955336" # Skitch
 )
 
 for app in "${MACAPPS[@]}"
