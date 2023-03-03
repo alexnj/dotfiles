@@ -30,3 +30,5 @@ precmd() {
   echo -ne "\e]1;${PWD##*/}\a"
 }
 
+# If there's a host specific .zshrc, load it.
+[[ ! -f ~/.zshrc-local ]] || source ~/.zshrc-local
