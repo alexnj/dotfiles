@@ -20,9 +20,8 @@ done
 
 # MacOS ships with a clangd that's only compiled with mac+xpc.
 # In order for remote indexing to work, we need a clangd thats compiled with grpc.
-CLANG_PACKAGE="alexnj/clangd/clangd-15.0.6"
-if ! brew list $CLANG_PACKAGE > /dev/null 2>&1; then
-  brew install $CLANG_PACKAGE
+if ! brew list clangd > /dev/null 2>&1; then
+  brew install alexnj/clangd/clangd
 else
   printf "already installed.\n"
 fi
