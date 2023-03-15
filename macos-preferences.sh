@@ -125,6 +125,10 @@ defaults write com.apple.dock "autohide-delay" -float "0"
 # Faster pointer tracking
 defaults write -g com.apple.mouse.scaling 4.0
 
+# Hasnt corrected anything for the better since OSX Lion
+defaults write -g NSAutomaticSpellingCorrectionEnabled -bool false
+defaults write -g WebAutomaticSpellingCorrectionEnabled -bool false
+
 #
 # Activate all setting changes
 #
