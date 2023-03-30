@@ -23,6 +23,7 @@ declare BREWS=(
 
   # Other packages
   "tmux"
+  "rsync" # upgrade 14 year old mac rsync
   "nvm"
   "iterm2"
   "romkatv/powerlevel10k/powerlevel10k" # powerline10k

@@ -14,7 +14,10 @@ alias f='find . -iname'
 alias ducks='du -cks * | sort -rn|head -11' # Lists the size of all the folders and files
 alias top='top -o cpu'
 
+alias backup-recv='sudo rsync --daemon --config=.rsyncd.conf'
+alias backup-send='rsync -hua --stats --progress --exclude "#recycle" --exclude "@eaDir"'
+
 # Start Visual studio code from command line
-code () { 
+code () {
   VSCODE_CWD="$PWD" open -n -b "com.microsoft.VSCode" --args $* ;
-} 
+}
