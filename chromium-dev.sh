@@ -25,3 +25,31 @@ if ! brew list clangd > /dev/null 2>&1; then
 else
   printf "already installed.\n"
 fi
+
+# Increase maxproc and maxfiles (10.15+)
+
+REBOOT_NEEDED=0
+
+if ! diff assets/limit.maxfiles.plist /Library/LaunchDaemons/limit.maxfiles.plist > /dev/null 2>&1; then
+  printf "Updating maxfiles.plist\n"
+  sudo cp assets/limit.maxfiles.plist /Library/LaunchDaemons/limit.maxfiles.plist
+  sudo chown root:wheel /Library/LaunchDaemons/limit.maxfiles.plist > /dev/null 2>&1
+  sudo launchctl load -w /Library/LaunchDaemons/limit.maxfiles.plist > /dev/null 2>&1
+  REBOOT_NEEDED=1
+else
+  printf "No diff in limit.maxfiles.plist, skipping update.\n";
+fi
+
+if ! diff assets/limit.maxproc.plist /Library/LaunchDaemons/limit.maxproc.plist > /dev/null 2>&1; then
+  printf "Updating maxproc.plist\n"
+  sudo cp assets/limit.maxproc.plist /Library/LaunchDaemons/limit.maxproc.plist
+  sudo chown root:wheel /Library/LaunchDaemons/limit.maxproc.plist > /dev/null 2>&1
+  sudo launchctl load -w /Library/LaunchDaemons/limit.maxproc.plist > /dev/null 2>&1
+  REBOOT_NEEDED=1
+else
+  printf "No diff in limit.maxproc.plist, skipping update.\n";
+fi
+
+if [ $REBOOT_NEEDED -eq 1 ]; then
+  printf "Files/process limit has been modified. You'll need to reboot before they can take effect..\n"
+fi
