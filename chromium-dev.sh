@@ -4,6 +4,7 @@ declare CHROMIUM_CHECKOUTS=(
   "$HOME/Documents/projects/chromium/src"
 )
 
+mkdir -p ~/Library/Preferences/clangd
 for folder in "${CHROMIUM_CHECKOUTS[@]}"
 do
   printf "Enabling remote-indexing for %s...\n" $folder
@@ -20,8 +21,10 @@ done
 
 # MacOS ships with a clangd that's only compiled with mac+xpc.
 # In order for remote indexing to work, we need a clangd thats compiled with grpc.
+printf "Installing clangd: "
 if ! brew list clangd > /dev/null 2>&1; then
   brew install alexnj/clangd/clangd
+  printf "Done.\n"
 else
   printf "already installed.\n"
 fi
