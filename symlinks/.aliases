@@ -21,3 +21,5 @@ alias backup-send='rsync -hua --stats --progress --exclude "#recycle" --exclude 
 code () {
   VSCODE_CWD="$PWD" open -n -b "com.microsoft.VSCode" --args $* ;
 }
+
+source ~/.chromium-dev-aliases.bash
