@@ -20,6 +20,7 @@ declare BREWS=(
   "font-fira-code"
   "font-cascadia-code"
   "font-meslo-lg-nerd-font"
+  "font-ibm-plex"
 
   # Other packages
   "tmux"
