@@ -53,6 +53,16 @@ else
   printf "No diff in limit.maxproc.plist, skipping update.\n";
 fi
 
+if ! diff assets/kern.maxvnodes.plist /Library/LaunchDaemons/kern.maxvnodes.plist > /dev/null 2>&1; then
+  printf "Updating maxvnodes.plist\n"
+  sudo cp assets/kern.maxvnodes.plist /Library/LaunchDaemons/kern.maxvnodes.plist
+  sudo chown root:wheel /Library/LaunchDaemons/kern.maxvnodes.plist > /dev/null 2>&1
+  sudo launchctl load -w /Library/LaunchDaemons/kern.maxvnodes.plist > /dev/null 2>&1
+  REBOOT_NEEDED=1
+else
+  printf "No diff in kern.maxvnodes.plist, skipping update.\n";
+fi
+
 if [ $REBOOT_NEEDED -eq 1 ]; then
   printf "Files/process limit has been modified. You'll need to reboot before they can take effect..\n"
 fi
