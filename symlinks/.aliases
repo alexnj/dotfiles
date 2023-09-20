@@ -16,6 +16,7 @@ alias top='top -o cpu'
 
 alias backup-recv='sudo rsync --daemon --config=.rsyncd.conf'
 alias backup-send='rsync -hua --stats --progress --exclude "#recycle" --exclude "@eaDir"'
+alias http='python3 -m http.server'
 
 # Start Visual studio code from command line
 code () {
