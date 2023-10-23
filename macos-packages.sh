@@ -15,6 +15,8 @@ brew tap homebrew/cask-fonts
 
 # Install favorite brews.
 declare BREWS=(
+  "git"
+
   # Programming fonts
   "font-inconsolata"
   "font-fira-code"
@@ -35,6 +37,7 @@ declare BREWS=(
   "gh" # github cli
   "tldr" # explainer
   "rectangle" # window manager
+  "watch"
 )
 
 for keg in "${BREWS[@]}"

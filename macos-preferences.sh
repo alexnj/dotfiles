@@ -180,6 +180,11 @@ git config --global pull.ff only
 # Easier to read diffs when lines move
 git config --global diff.colorMoved zebra
 
+# fsmonitor and untrackedcache to speed up git status
+# https://github.blog/2022-06-29-improve-git-monorepo-performance-with-a-file-system-monitor/
+git config --global core.fsmonitor true
+# https://git-scm.com/docs/git-config#Documentation/git-config.txt-coreuntrackedCache
+git config --global core.untrackedcache true
 
 ## Amphetamine
 
