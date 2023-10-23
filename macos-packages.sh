@@ -29,7 +29,7 @@ declare BREWS=(
   "rsync" # upgrade 14 year old mac rsync
   "nvm"
   "iterm2"
-  "romkatv/powerlevel10k/powerlevel10k" # powerline10k
+  "powerlevel10k" # powerline10k
   "fzf" # fuzzy search (^r)
   "jq" # json processor
   "jless" # json view for cmdline
@@ -65,7 +65,7 @@ declare MACAPPS=(
 
 for app in "${MACAPPS[@]}"
 do
-  printf "Installing %s from AppStore... " $keg
+  printf "Installing %s from AppStore... " $app
   if ! mas list | grep $app > /dev/null 2>&1; then
     mas install $app
   else
