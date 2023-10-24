@@ -2,7 +2,10 @@
 sudo -v
 
 sh install-dotfiles.sh
-sh macos-packages.sh
-sh macos-preferences.sh
+
+if [[ $OSTYPE == 'darwin'* ]]; then
+  sh macos-packages.sh
+  sh macos-preferences.sh
+fi
 
 sh personal.sh

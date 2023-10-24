@@ -3,7 +3,7 @@
 function cr_comp() {
   # Compiles the provided target, or out/Default by default.
   local target="${1:-out/Default}"
-  autoninja -C $target
+  RBE_racing_bias=0.5 RBE_cas_concurrency=2000 autoninja -C $target chrome
 }
 
 function cr_which_test() {

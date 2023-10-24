@@ -18,7 +18,7 @@ alias backup-recv='sudo rsync --daemon --config=.rsyncd.conf'
 alias backup-send='rsync -hua --stats --progress --exclude "#recycle" --exclude "@eaDir"'
 alias http='python3 -m http.server'
 
-# Start Visual studio code from command line
+# Start Visual studio code from command line1
 code () {
   VSCODE_CWD="$PWD" open -n -b "com.microsoft.VSCode" --args $* ;
 }
