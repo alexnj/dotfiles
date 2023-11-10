@@ -23,6 +23,7 @@ declare BREWS=(
   "font-cascadia-code"
   "font-meslo-lg-nerd-font"
   "font-ibm-plex"
+  "font-monaspace"
 
   # Other packages
   "tmux"
