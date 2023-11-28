@@ -1,0 +1,19 @@
+# This is Git's per-user configuration file.
+[user]
+	useConfigOnly = true
+	name = Alex N. Jose
+  # I leave the email intentionally out, so it can be set per repo.
+[core]
+	excludesfile = ~/.gitignore
+[credential]
+	helper = osxkeychain
+[pull]
+	rebase = true
+	ff = only
+[http]
+	cookiefile = ~/.gitcookies
+[alias]
+	# Chromium-specific:
+	xl = !"git map-branches -vvvv"
+[diff]
+	colorMoved = zebra
