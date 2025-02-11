@@ -1,5 +1,7 @@
 source ~/.aliases
 
+eval $(tmux showenv -s DISPLAY)
+
 if [[ $OSTYPE == 'darwin'* ]]; then
   # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
   # Initialization code that may require console input (password prompts, [y/n]
@@ -21,10 +23,32 @@ autoload -Uz compinit && compinit
 if [[ $OSTYPE == 'darwin'* ]]; then
   # powerline10k
   source /opt/homebrew/opt/powerlevel10k/powerlevel10k.zsh-theme
-
-  # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
-  [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 fi
+
+if [[ $OSTYPE == 'linux-gnu'* ]]; then
+  printf "Linux mode"
+  if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+    source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+  fi
+  export ZSH="$HOME/.oh-my-zsh"
+  ZSH_THEME="powerlevel10k/powerlevel10k"
+  zstyle ':completion::complete:*' cache-path ~/.zsh/cache
+  zstyle ':completion:*' users root $USER
+  autoload -Uz compinit && compinit -i
+
+  plugins=(git zsh-autosuggestions zsh-syntax-highlighting)
+  source $ZSH/oh-my-zsh.sh
+fi
+
+# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
+[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
+bindkey '^[[3~' delete-char           # Enables DEL key proper behaviour
+bindkey '^[[1;5C' forward-word        # [Ctrl-RightArrow] - move forward one word
+bindkey '^[[1;5D' backward-word       # [Ctrl-LeftArrow] - move backward one word
+bindkey  "^[[H"   beginning-of-line   # [Home] - goes at the beginning of the line
+bindkey  "^[[F"   end-of-line         # [End] - goes at the end of the line
+
 
 ## History file configuration
 [ -z "$HISTFILE" ] && HISTFILE="$HOME/.zsh_history"
@@ -52,3 +76,4 @@ precmd() {
 
 # If there's a host specific .zshrc, load it.
 [[ ! -f ~/.zshrc-local ]] || source ~/.zshrc-local
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
