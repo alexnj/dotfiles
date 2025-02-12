@@ -23,5 +23,10 @@ code () {
   VSCODE_CWD="$PWD" open -n -b "com.microsoft.VSCode" --args $* ;
 }
 
+recent() {
+  ls -t $@/{*,.*}| head -n1
+}
+
+
 # Chromium development related
 source ~/.chromium-dev-aliases.bash

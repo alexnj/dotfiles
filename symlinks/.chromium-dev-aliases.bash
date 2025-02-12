@@ -38,3 +38,5 @@ cr_run() {
 alias cr_sync="gclient sync"
 alias cr_gen="gn gen out/Default"
 alias cr_gen_intel="tools/clang/scripts/generate_compdb.py -p out/Default > compile_commands.json"
+
+export SKIP_GCE_AUTH_FOR_GIT=1
